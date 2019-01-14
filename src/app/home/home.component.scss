@@ -1,0 +1,13 @@
+.movimientos-large{
+    min-width: 330px;
+}
+
+.celular{
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .celular {
+        display: none;
+    }
+}

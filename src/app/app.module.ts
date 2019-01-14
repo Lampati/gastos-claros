@@ -14,6 +14,9 @@ import { AuthenticationService } from './_services/authentication.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MovimientosComponent } from './movimientos/movimientos.component';
+import { HomeComponent } from './home/home.component';
+import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movimientos.component';
 
 
 
@@ -21,7 +24,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MovimientosComponent,
+    HomeComponent,
+    UltimosMovimientosComponent
   ],
   imports: [ 
     BrowserModule,

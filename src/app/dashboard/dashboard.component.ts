@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,22 +8,11 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class DashboardComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private authenticationService: AuthenticationService
+  
   ) { }
-
-  navbarOpen = false;
-
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
-  }
-
 
   ngOnInit() {
   }
 
-  logout(){
-    this.authenticationService.signOut();
-  }
+
 }

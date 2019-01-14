@@ -1,13 +1,7 @@
-<nav class="navbar   navbar-expand-lg navbar-dark bg-primary">
-  <span class="navbar-brand" >Gastos</span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" (click)="toggleNavbar()" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse"  [ngClass]="{ 'show': navbarOpen }" id="navbarNavAltMarkup">
-    <div class="navbar-nav nav-pills">
-      <a class="nav-item nav-link active" href="dashboard">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link pointer"(click)="logout()">Logout</a>
-    </div>
-  </div>
-</nav>
-<p>Hola!</p>
+<div class="celular d-flex">
+  <app-ultimos-movimientos class="flex-fill"></app-ultimos-movimientos>
+</div>
+<div class="desktop d-flex">
+  <div class="flex-fill">hola</div>
+  <app-ultimos-movimientos class="movimientos-large"></app-ultimos-movimientos>
+</div>

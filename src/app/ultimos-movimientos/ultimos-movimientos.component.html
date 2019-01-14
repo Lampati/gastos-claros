@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">
+        Fecha
+      </div>
+      <div class="col">
+        Usuario
+      </div>
+      <div class="col">
+        Tipo
+      </div>     
+      <div class="col">
+        Monto
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+
+    <div class="row align-items-center" *ngFor="let item of ultimosMovimientos ">
+      <div class="col">
+        {{item.fecha | date: 'dd/MM'}} 
+      </div>
+      <div class="col">
+        {{item.getUsuarioCorto()}}
+      </div>
+      <div class="col">
+        {{item.tipo}}
+      </div>      
+      <div class="col">
+        ${{item.monto}}
+      </div>
+      <div class="col">
+        X
+      </div>
+    </div>
+</div>

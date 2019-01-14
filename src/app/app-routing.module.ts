@@ -3,12 +3,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { MovimientosComponent } from './movimientos/movimientos.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 const routes: Routes = [  
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]  }
+  { path: 'home', 
+    component: HomeComponent, 
+    canActivate: [AuthGuard],
+    children: [
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'movimientos', component: MovimientosComponent}      
+    ]  },
+  { path: '', redirectTo: 'home',   pathMatch: 'full' }
  
 ];
 
