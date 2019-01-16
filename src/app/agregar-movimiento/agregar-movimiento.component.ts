@@ -26,7 +26,8 @@ export class AgregarMovimientoComponent implements OnInit {
 
   ngOnInit() {
     this.movimientoForm = this.formBuilder.group({
-      fecha: [new Date().toLocaleDateString(), Validators.required],
+      fecha: [new Date().toISOString().substring(0,10), Validators.required],
+      usuario: ['', Validators.required],
       tipo: ['', Validators.required],
       monto: ['', Validators.required],
       nombre: ['']
@@ -39,6 +40,10 @@ export class AgregarMovimientoComponent implements OnInit {
         tipo.nombre = data.nombre;
         this.tipos.push(tipo);
       })
+      if (this.tipos.length > 0){
+        this.f['tipo'].setValue(this.tipos[0].nombre);
+      }
+      
     });
   }
 
