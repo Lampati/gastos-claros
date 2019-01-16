@@ -4,13 +4,9 @@ import { Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { auth } from 'firebase';
+import { User } from '../_models/user';
 
-interface User {
-  uid: string;
-  email?: string | null;
-  photoURL?: string;
-  displayName?: string;
-}
+
 
 @Injectable()
 export class AuthenticationService {
@@ -108,9 +104,9 @@ export class AuthenticationService {
   }
 
   // Sets user data to firestore after succesful login
-  private updateUserData(user: User) {
+  private updateUserData(user: firebase.User) {
 
-    if (user) {
+    if (user) {        
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
     }

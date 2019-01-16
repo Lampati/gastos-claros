@@ -1,5 +1,6 @@
 export class Movimiento{
     anio: number;
+    mes: number;
     fecha: Date;
     nombre: string;
     tipo: string;

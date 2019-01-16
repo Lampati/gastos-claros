@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tipo } from '../_models/tipo';
 import { FirestoreService } from '../_services/firestore.service';
 import { Movimiento } from '../_models/movimiento';
+import { User } from '../_models/user';
 
 @Component({
   selector: 'app-agregar-movimiento',
@@ -13,6 +14,8 @@ export class AgregarMovimientoComponent implements OnInit {
 
   movimientoForm: FormGroup;
   loading = false;
+
+  user: User;
 
   tipos: Tipo[] = [];
 
@@ -42,9 +45,12 @@ export class AgregarMovimientoComponent implements OnInit {
       })
       if (this.tipos.length > 0){
         this.f['tipo'].setValue(this.tipos[0].nombre);
-      }
-      
-    });
+      }      
+    });    
+
+    this.user = new User(JSON.parse(localStorage.getItem('currentUser')));
+    
+    this.f['usuario'].setValue(this.user.nombreCorto);
   }
 
   onSubmit() {
@@ -55,13 +61,16 @@ export class AgregarMovimientoComponent implements OnInit {
 
     this.loading = true;
 
+    var fechaMov = new Date(this.f.fecha.value);
+
     var mov = {
-      anio: 2019,
+      anio: fechaMov.getFullYear(),
+      mes: fechaMov.getMonth() + 1,
       monto: this.f.monto.value,
       nombre: this.f.nombre.value,
       tipo: this.f.tipo.value,
-      usuario: "fed_lanza@hotmail.com",
-      fecha: new Date (this.f.fecha.value)
+      usuario: this.f.usuario.value,
+      fecha: fechaMov
     }
 
     const user = this.fireStoreService.crearMovimiento(mov)     
