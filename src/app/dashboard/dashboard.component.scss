@@ -1,19 +1,16 @@
 .movimientos-large{
     min-width: 430px;
+
+    
 }
 
-.celular{
-    display: flex !important;
-}
 
 .desktop{
     display: none !important;
 }
 
-@media (min-width: 992px) {
-    .celular {
-        display: none !important;
-    }
+@media (min-width: 1024px) {
+ 
     .desktop{
         display: flex !important;
     }

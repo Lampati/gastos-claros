@@ -1,7 +1,13 @@
-<div class="celular d-flex">
-  <app-ultimos-movimientos class="flex-fill"></app-ultimos-movimientos>
-</div>
-<div class="desktop d-flex">
-  <div class="flex-fill">hola</div>
-  <app-ultimos-movimientos class="movimientos-large"></app-ultimos-movimientos>
+<div class=" d-flex">
+  <div class="flex-fill my-2 desktop">
+    <app-resumen-movimientos></app-resumen-movimientos>
+  </div>
+  <div>
+    <div class="my-2">
+      <app-agregar-movimiento class="flex-fill"></app-agregar-movimiento>
+    </div>
+    <div class="my-2">
+      <app-ultimos-movimientos class="flex-fill"></app-ultimos-movimientos>     
+    </div>
+  </div> 
 </div>

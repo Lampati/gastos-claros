@@ -43,6 +43,6 @@ export class LoginComponent implements OnInit {
     const user = this.authenticationService.emailLogin(this.f.email.value, this.f.password.value)     
         .then( credential => this.router.navigate(['home']) )
         .catch( () => this.loading = false)
-}
+  }
 
 }

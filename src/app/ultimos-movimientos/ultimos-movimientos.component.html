@@ -1,37 +1,29 @@
 <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col">
-        Fecha
-      </div>
-      <div class="col">
-        Usuario
-      </div>
-      <div class="col">
-        Tipo
-      </div>     
-      <div class="col">
-        Monto
-      </div>
-      <div class="col">
-        
-      </div>
+  <div class="card">
+    <h5 class="card-header">
+        Ultimos movimientos
+    </h5>
+    <div class="card-body">
+        <table class="table table-hover table-striped ">
+          <thead class="align-items-center">
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Monto</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-items-center" *ngFor="let item of ultimosMovimientos ">
+              <td>{{item.fecha | date: 'dd/MM'}} </td>
+              <td> {{item.getUsuarioCorto()}}</td>        
+              <td>{{item.tipo}}</td>
+              <td>${{item.monto}}</td>
+              <td>X</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-
-    <div class="row align-items-center" *ngFor="let item of ultimosMovimientos ">
-      <div class="col">
-        {{item.fecha | date: 'dd/MM'}} 
-      </div>
-      <div class="col">
-        {{item.getUsuarioCorto()}}
-      </div>
-      <div class="col">
-        {{item.tipo}}
-      </div>      
-      <div class="col">
-        ${{item.monto}}
-      </div>
-      <div class="col">
-        X
-      </div>
-    </div>
+  </div>
 </div>

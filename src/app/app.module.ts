@@ -17,6 +17,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MovimientosComponent } from './movimientos/movimientos.component';
 import { HomeComponent } from './home/home.component';
 import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movimientos.component';
+import { AgregarMovimientoComponent } from './agregar-movimiento/agregar-movimiento.component';
+import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movimientos.component';
 
 
 
@@ -27,7 +29,9 @@ import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movim
     DashboardComponent,
     MovimientosComponent,
     HomeComponent,
-    UltimosMovimientosComponent
+    UltimosMovimientosComponent,
+    AgregarMovimientoComponent,
+    ResumenMovimientosComponent
   ],
   imports: [ 
     BrowserModule,
