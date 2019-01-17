@@ -33,7 +33,7 @@ export class ResumenMovimientosComponent implements OnInit {
     
   }
 
-  getTotalMes(mes:number, tipo: Tipo) : number{
+  getTotalMesTipo(mes:number, tipo: Tipo) : number{
     var total = 0;
 
     this.movimientos.filter (x => x.mes == mes && x.tipo == tipo.nombre).forEach(element => {
@@ -43,11 +43,46 @@ export class ResumenMovimientosComponent implements OnInit {
     return total;
   }
 
-  getTotal( tipo: Tipo) : number{
+  getTotalMes(mes:number) : number{
+    var total = 0;
+
+    this.movimientos.filter (x => x.mes == mes ).forEach(element => {
+      total += element.monto;
+    });
+
+    return total;
+  }
+
+  getTotalTipo( tipo: Tipo) : number{
     var total = 0;
 
     this.movimientos.filter (x =>x.tipo == tipo.nombre).forEach(element => {
       total += element.monto;
+    });
+
+    return total;
+  }
+
+  getTotal() : number{
+    var total = 0;
+
+    this.movimientos.forEach(element => {
+      total += element.monto;
+    });
+
+    return total;
+  }
+
+  getBalanceMesActual( ) : number{
+    var mesActual = new Date().getMonth() + 1
+    var total = 0;
+
+    this.movimientos.filter (x =>x.mes == mesActual).forEach(element => {
+      if (this.tipos.find(x => x.nombre == element.tipo).resta){
+        total -= element.monto;
+      }else{
+        total += element.monto;
+      }
     });
 
     return total;

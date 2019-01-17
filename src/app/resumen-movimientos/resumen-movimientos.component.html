@@ -22,35 +22,35 @@
         <tbody>
           <tr class="align-items-center thead-light" *ngFor="let item of tipos ">
             <th scope="row">{{item.nombre}} </th>
-            <td>${{getTotalMes(1,item)}}</td>        
-            <td>${{getTotalMes(2,item)}}</td>        
-            <td>${{getTotalMes(3,item)}}</td>        
-            <td>${{getTotalMes(4,item)}}</td>        
-            <td>${{getTotalMes(5,item)}}</td>        
-            <td>${{getTotalMes(6,item)}}</td>        
-            <td>${{getTotalMes(7,item)}}</td>        
-            <td>${{getTotalMes(8,item)}}</td>        
-            <td>${{getTotalMes(9,item)}}</td>        
-            <td>${{getTotalMes(10,item)}}</td>        
-            <td>${{getTotalMes(11,item)}}</td>        
-            <td>${{getTotalMes(12,item)}}</td> 
-            <th scope="row">${{getTotal(item)}}</th>        
+            <td>${{getTotalMesTipo(1,item)}}</td>        
+            <td>${{getTotalMesTipo(2,item)}}</td>        
+            <td>${{getTotalMesTipo(3,item)}}</td>        
+            <td>${{getTotalMesTipo(4,item)}}</td>        
+            <td>${{getTotalMesTipo(5,item)}}</td>        
+            <td>${{getTotalMesTipo(6,item)}}</td>        
+            <td>${{getTotalMesTipo(7,item)}}</td>        
+            <td>${{getTotalMesTipo(8,item)}}</td>        
+            <td>${{getTotalMesTipo(9,item)}}</td>        
+            <td>${{getTotalMesTipo(10,item)}}</td>        
+            <td>${{getTotalMesTipo(11,item)}}</td>        
+            <td>${{getTotalMesTipo(12,item)}}</td> 
+            <th scope="row">${{getTotalTipo(item)}}</th>        
           </tr>
           <tr class="align-items-center table-primary thead-light" >
             <th scope="row">Total</th>
-              <th>$10000</th>        
-              <th>$10000</th>        
-              <th>$10000</th>        
-              <th>$10000</th>        
-              <th>$10000</th>        
-              <th>$10000</th>        
-              <th>$10000</th>         
-              <th>$10000</th>        
-              <th>$10000</th>     
-              <th>$10000</th>      
-              <th>$10000</th>  
-              <th>$10000</th>        
-              <th scope="row">$10000</th>        
+              <th>${{getTotalMes(1)}}</th>        
+              <th>${{getTotalMes(2)}}</th>        
+              <th>${{getTotalMes(3)}}</th>        
+              <th>${{getTotalMes(4)}}</th>        
+              <th>${{getTotalMes(5)}}</th>        
+              <th>${{getTotalMes(6)}}</th>        
+              <th>${{getTotalMes(7)}}</th>         
+              <th>${{getTotalMes(8)}}</th>        
+              <th>${{getTotalMes(9)}}</th>     
+              <th>${{getTotalMes(10)}}</th>      
+              <th>${{getTotalMes(11)}}</th>  
+              <th>${{getTotalMes(12)}}</th>        
+              <th scope="row">${{getTotal()}}</th>        
             </tr>
         </tbody>
       </table>
