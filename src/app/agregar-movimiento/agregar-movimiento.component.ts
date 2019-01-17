@@ -41,6 +41,8 @@ export class AgregarMovimientoComponent implements OnInit {
       movimientosSnap.forEach((data: any) => {
         const tipo = new Tipo()
         tipo.nombre = data.nombre;
+        tipo.resta = data.resta;
+        tipo.orden = data.orden;
         this.tipos.push(tipo);
       })
       if (this.tipos.length > 0){
@@ -60,8 +62,7 @@ export class AgregarMovimientoComponent implements OnInit {
     }
 
     this.loading = true;
-
-    var fechaMov = new Date(this.f.fecha.value);
+    var fechaMov = new Date(this.f.fecha.value + ' ' + new Date().toTimeString());
 
     var mov = {
       anio: fechaMov.getFullYear(),

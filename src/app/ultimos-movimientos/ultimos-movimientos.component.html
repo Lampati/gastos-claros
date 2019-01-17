@@ -17,10 +17,10 @@
           <tbody>
             <tr class="align-items-center" *ngFor="let item of ultimosMovimientos ">
               <td>{{item.fecha | date: 'dd/MM'}} </td>
-              <td> {{item.getUsuarioCorto()}}</td>        
+              <td> {{item.usuario}}</td>        
               <td>{{item.tipo}}</td>
               <td>${{item.monto}}</td>
-              <td>X</td>
+              <td><button class="btn-transparente pointer" (click)="onEliminarClick($event, item)"><i  class="material-icons">clear</i></button></td>
             </tr>
           </tbody>
         </table>

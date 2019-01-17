@@ -16,20 +16,33 @@ export class UltimosMovimientosComponent implements OnInit {
   ultimosMovimientos: Movimiento[] = [];
 
   ngOnInit() {
-    this.fireStoreService.getMovimientos().subscribe((movimientosSnap) => {
-      this.ultimosMovimientos = [];
-      movimientosSnap.forEach((data: any) => {
-        const mov = new Movimiento()
-        mov.anio = data.anio;
-        mov.fecha = data.fecha.toDate() ;
-        mov.usuario = data.usuario;
-        mov.tipo = data.tipo;
-        mov.nombre = data.nombre;
-        mov.monto = data.monto;
 
-        this.ultimosMovimientos.push(mov);
-      })
-    });
+    this.fireStoreService.getUltimosMovimientos(10).subscribe((movimientosSnap) => {
+        this.ultimosMovimientos = [];      
+        
+        movimientosSnap.forEach((snap: any) => {
+          const data = snap.payload.doc.data() ;
+
+          const mov = new Movimiento()
+          mov.anio = data.anio;
+          mov.mes = data.mes;          
+          mov.fecha = data.fecha.toDate() ;
+          mov.usuario = data.usuario;
+          mov.tipo = data.tipo;
+          mov.nombre = data.nombre;
+          mov.monto = data.monto;
+          mov.documentId = snap.payload.doc.id;
+
+          this.ultimosMovimientos.push(mov);
+        })
+      }
+    ); 
+
   }
 
+  onEliminarClick(event, item){
+    this.fireStoreService.deleteMovimiento(item.documentId).then(function() {
+  }).catch(function(error) {
+  });
+  }
 }

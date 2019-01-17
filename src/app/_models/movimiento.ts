@@ -1,4 +1,5 @@
 export class Movimiento{
+    documentId: string;
     anio: number;
     mes: number;
     fecha: Date;
@@ -7,13 +8,5 @@ export class Movimiento{
     monto: number;
     usuario: string;
 
-    getUsuarioCorto(){
-        if (this.usuario.startsWith('fed_lanza')){
-            return 'Fede'
-        }else if (this.usuario.startsWith('ceciliacampos')){
-            return 'Ceci'
-        }else{
-            return 'Sin User'
-        }
-    }
+    
 }

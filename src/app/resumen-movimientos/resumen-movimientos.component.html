@@ -20,37 +20,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="align-items-center" *ngFor="let item of tipos ">
+          <tr class="align-items-center thead-light" *ngFor="let item of tipos ">
             <th scope="row">{{item.nombre}} </th>
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>        
-            <td>$10000</td>   
-            <td scope="row">$10000</td>        
+            <td>${{getTotalMes(1,item)}}</td>        
+            <td>${{getTotalMes(2,item)}}</td>        
+            <td>${{getTotalMes(3,item)}}</td>        
+            <td>${{getTotalMes(4,item)}}</td>        
+            <td>${{getTotalMes(5,item)}}</td>        
+            <td>${{getTotalMes(6,item)}}</td>        
+            <td>${{getTotalMes(7,item)}}</td>        
+            <td>${{getTotalMes(8,item)}}</td>        
+            <td>${{getTotalMes(9,item)}}</td>        
+            <td>${{getTotalMes(10,item)}}</td>        
+            <td>${{getTotalMes(11,item)}}</td>        
+            <td>${{getTotalMes(12,item)}}</td> 
+            <th scope="row">${{getTotal(item)}}</th>        
           </tr>
-          <tr class="align-items-center table-success" >
+          <tr class="align-items-center table-primary thead-light" >
             <th scope="row">Total</th>
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>        
-              <td>$10000</td>     
-              <td>$10000</td>      
-              <td>$10000</td>        
-              <td scope="row">$10000</td>        
+              <th>$10000</th>        
+              <th>$10000</th>        
+              <th>$10000</th>        
+              <th>$10000</th>        
+              <th>$10000</th>        
+              <th>$10000</th>        
+              <th>$10000</th>         
+              <th>$10000</th>        
+              <th>$10000</th>     
+              <th>$10000</th>      
+              <th>$10000</th>  
+              <th>$10000</th>        
+              <th scope="row">$10000</th>        
             </tr>
         </tbody>
       </table>

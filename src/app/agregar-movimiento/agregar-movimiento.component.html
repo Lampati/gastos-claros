@@ -8,7 +8,7 @@
         <form class="d-flex flex-column justify-content-center" [formGroup]="movimientoForm" (ngSubmit)="onSubmit()">  
           <div class="form-group row">
             <div class="col-sm-8">
-              <input type="date" formControlName="fecha"  id="inputFecha" class="my-1 form-control" placeholder="Fecha"  autofocus="">
+              <input type="date" formControlName="fecha"  id="inputFecha" class="my-1 form-control" placeholder="Fecha"  >
             </div>
             <div class="col-sm-4">
                 <select formControlName="usuario" class="my-1 form-control" >
@@ -27,7 +27,7 @@
                   <input type="text" formControlName="nombre" id="inputNombre" class="my-1 form-control" placeholder="Nombre" > 
               </div>
               <div class="col-sm-4">
-                  <input type="number" formControlName="monto" id="inputMonto" class="my-1 form-control" placeholder="Monto" > 
+                  <input type="number" formControlName="monto" id="inputMonto" class="my-1 form-control" placeholder="Monto" autofocus=""> 
               </div>
             </div>
          
