@@ -4,6 +4,9 @@
     
 }
 
+.margen-desktop{
+    margin-top: inherit;
+}
 
 .desktop{
     display: none !important;
@@ -14,4 +17,9 @@
     .desktop{
         display: flex !important;
     }
+
+    .margen-desktop{
+        margin-top: 68px !important;
+    }
+    
 }

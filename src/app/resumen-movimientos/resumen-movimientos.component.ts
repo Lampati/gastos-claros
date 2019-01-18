@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Tipo } from '../_models/tipo';
 import { FirestoreService } from '../_services/firestore.service';
 import { Movimiento } from '../_models/movimiento';
@@ -12,11 +12,18 @@ export class ResumenMovimientosComponent implements OnInit {
 
   tipos: Tipo[] = [];
   movimientos: Movimiento[] = [];
+
+ 
+
+
   
   constructor(   private fireStoreService: FirestoreService) { }
 
+  @Input()
+  anio: number;
+
   ngOnInit() {
-    this.fireStoreService.getMovimientosDelAnio(2019).subscribe((elementos) => {
+    this.fireStoreService.getMovimientosDelAnio(this.anio).subscribe((elementos) => {
       this.movimientos = elementos;
 
       this.fireStoreService.getTipos().subscribe((movimientosSnap) => {

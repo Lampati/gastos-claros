@@ -1,9 +1,19 @@
 <div class="container-fluid">
-    <div class="card">     
+  <div class="my-3 d-flex">
+    <div class="mt-1">
+      <h4 >Total del mes actual: {{getBalanceMesActual() | currency}}</h4>  
+    </div>    
+    <div class="btn-group mx-4" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary">Fede</button>
+      <button type="button" class="btn btn-secondary">Ceci</button>
+      <button type="button" class="btn btn-secondary">Todos</button>
+    </div>
+  </div>
+  <div class="card">           
       <table class="table table-hover">
         <thead class="align-items-center thead-light ">
           <tr>
-            <th scope="col"></th>
+            <th scope="col">{{anio}}</th>
             <th scope="col">Ene</th>
             <th scope="col">Feb</th>
             <th scope="col">Mar</th>
