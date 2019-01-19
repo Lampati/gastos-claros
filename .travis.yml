@@ -10,9 +10,5 @@ before_script: # commands to run before the build step
 script: # the build step
    - ng build --prod
    
-
-deploy:
-  provider: firebase
-  token:
-    secure: "1/ypj1aP7c406N7Xu3b-ZP2uo6ZsFEgSq7510NhDN9Aqo"
-  project: "gastos-claros"
+after_script:
+  - firebase deploy --token 1/ypj1aP7c406N7Xu3b-ZP2uo6ZsFEgSq7510NhDN9Aqo --only hosting --non-interactive
