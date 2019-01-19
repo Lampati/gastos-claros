@@ -5,15 +5,15 @@
       <option>2020</option>
     </select>
   </div>
-  <div class="btn-group btn-group-toggle " data-toggle="buttons">
-      <label class="btn btn-primary active">
-        <input type="radio" name="options" id="Fede" autocomplete="off" checked (change)="onClickFiltro('Todos')">Todos
+  <div class="btn-group btn-group-toggle "  data-toggle="buttons">
+      <label class="btn btn-primary active"   (click)="onClickFiltro('Todos')" >
+        <input type="radio" name="options" id="Fede"  checked >Todos
       </label>
-      <label class="btn btn-primary">
-        <input type="radio" name="options" id="Ceci" autocomplete="off" (change)="onClickFiltro('Ceci')"> Ceci
+      <label class="btn btn-primary"   (click)="onClickFiltro('Ceci')">
+        <input type="radio" name="options" id="Ceci"   > Ceci
       </label>
-      <label class="btn btn-primary">
-        <input type="radio" name="options" id="Todos" autocomplete="on" (change)="onClickFiltro('Fede')"> Fede
+      <label class="btn btn-primary"  (click)="onClickFiltro('Fede')">
+        <input type="radio" name="options" id="Todos" > Fede
       </label>
   </div>
 </div>

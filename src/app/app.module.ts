@@ -20,7 +20,6 @@ import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movim
 import { AgregarMovimientoComponent } from './agregar-movimiento/agregar-movimiento.component';
 import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movimientos.component';
 import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimientos.component';
-import { TablaAnioMovimientosComponent } from './tabla-anio-movimientos/tabla-anio-movimientos.component';
 
 
 
@@ -34,8 +33,7 @@ import { TablaAnioMovimientosComponent } from './tabla-anio-movimientos/tabla-an
     UltimosMovimientosComponent,
     AgregarMovimientoComponent,
     ResumenMovimientosComponent,
-    FiltroMovimientosComponent,
-    TablaAnioMovimientosComponent
+    FiltroMovimientosComponent
   ],
   imports: [ 
     BrowserModule,

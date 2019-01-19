@@ -46,7 +46,7 @@ export class AgregarMovimientoComponent implements OnInit {
         this.tipos.push(tipo);
       })
       if (this.tipos.length > 0){
-        this.f['tipo'].setValue(this.tipos[0].nombre);
+        this.f['tipo'].setValue(this.tipos[3].nombre);
       }      
     });    
 
