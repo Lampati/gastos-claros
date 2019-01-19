@@ -14,5 +14,5 @@ script: # the build step
 deploy:
   provider: firebase
   token:
-    secure: 1/ypj1aP7c406N7Xu3b-ZP2uo6ZsFEgSq7510NhDN9Aqo
+    secure: "1/ypj1aP7c406N7Xu3b-ZP2uo6ZsFEgSq7510NhDN9Aqo"
   project: "gastos-claros"
