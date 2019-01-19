@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movimientos.component';
 import { AgregarMovimientoComponent } from './agregar-movimiento/agregar-movimiento.component';
 import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movimientos.component';
+import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimientos.component';
+import { TablaAnioMovimientosComponent } from './tabla-anio-movimientos/tabla-anio-movimientos.component';
 
 
 
@@ -31,7 +33,9 @@ import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movim
     HomeComponent,
     UltimosMovimientosComponent,
     AgregarMovimientoComponent,
-    ResumenMovimientosComponent
+    ResumenMovimientosComponent,
+    FiltroMovimientosComponent,
+    TablaAnioMovimientosComponent
   ],
   imports: [ 
     BrowserModule,

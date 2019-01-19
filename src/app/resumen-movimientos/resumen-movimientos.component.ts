@@ -13,31 +13,39 @@ export class ResumenMovimientosComponent implements OnInit {
   tipos: Tipo[] = [];
   movimientos: Movimiento[] = [];
 
- 
-
-
-  
   constructor(   private fireStoreService: FirestoreService) { }
 
-  @Input()
-  anio: number;
 
-  ngOnInit() {
-    this.fireStoreService.getMovimientosDelAnio(this.anio).subscribe((elementos) => {
-      this.movimientos = elementos;
-
-      this.fireStoreService.getTipos().subscribe((movimientosSnap) => {
-        this.tipos = [];
-        movimientosSnap.forEach((data: any) => {
-          const tipo = new Tipo()
-          tipo.nombre = data.nombre;
-          tipo.resta = data.resta;
-          tipo.orden = data.orden;
-          this.tipos.push(tipo);
-        })
-      });
+  ngOnInit() {   
+    this.fireStoreService.getTipos().subscribe((movimientosSnap) => {
+      this.tipos = [];
+      movimientosSnap.forEach((data: any) => {
+        const tipo = new Tipo()
+        tipo.nombre = data.nombre;
+        tipo.resta = data.resta;
+        tipo.orden = data.orden;
+        this.tipos.push(tipo);
+      })
     });
-    
+  }
+
+  getMovimientosFiltrados(movimientosFiltrados: Movimiento[]){
+    this.movimientos = movimientosFiltrados;
+  }
+
+  getBalanceMesActual( ) : number{
+    var mesActual = new Date().getMonth() + 1
+    var total = 0;
+
+    this.movimientos.filter (x =>x.mes == mesActual).forEach(element => {
+      if (this.tipos.find(x => x.nombre == element.tipo).resta){
+        total -= element.monto;
+      }else{
+        total += element.monto;
+      }
+    });
+
+    return total;
   }
 
   getTotalMesTipo(mes:number, tipo: Tipo) : number{
@@ -80,19 +88,6 @@ export class ResumenMovimientosComponent implements OnInit {
     return total;
   }
 
-  getBalanceMesActual( ) : number{
-    var mesActual = new Date().getMonth() + 1
-    var total = 0;
-
-    this.movimientos.filter (x =>x.mes == mesActual).forEach(element => {
-      if (this.tipos.find(x => x.nombre == element.tipo).resta){
-        total -= element.monto;
-      }else{
-        total += element.monto;
-      }
-    });
-
-    return total;
-  }
+  
 
 }

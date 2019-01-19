@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div class="anio mr-3">
+    <select class="form-control"  (change)="onChangeAnio($event.target.value)">
+      <option>2019</option>
+      <option>2020</option>
+    </select>
+  </div>
+  <div class="btn-group btn-group-toggle " data-toggle="buttons">
+      <label class="btn btn-primary active">
+        <input type="radio" name="options" id="Fede" autocomplete="off" checked (change)="onClickFiltro('Todos')">Todos
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="Ceci" autocomplete="off" (change)="onClickFiltro('Ceci')"> Ceci
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="Todos" autocomplete="on" (change)="onClickFiltro('Fede')"> Fede
+      </label>
+  </div>
+</div>
