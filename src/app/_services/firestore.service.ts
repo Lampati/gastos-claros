@@ -48,6 +48,29 @@ export class FirestoreService {
     );
   }
 
+  public getMovimientosDelMesAnio(anio: number, mes: number) {
+    return this.firestore.collection('movimientos', ref => ref.where('anio','==',anio).where('mes','==',mes)).valueChanges().
+      pipe(
+        map(response => {
+          const elementos:  Movimiento[] = [];
+          response.forEach((data: any) => {
+            const mov = new Movimiento()
+            mov.anio = data.anio;
+            mov.mes = data.mes;            
+            mov.fecha = data.fecha.toDate() ;
+            mov.usuario = data.usuario;
+            mov.tipo = data.tipo;
+            mov.nombre = data.nombre;
+            mov.monto = data.monto;
+    
+            elementos.push(mov);
+          }          
+        ) 
+        return elementos;
+        })
+    );
+  }
+
   public getTipos() {
     return this.firestore.collection('tipos', ref => ref.orderBy('orden')).valueChanges();
   }

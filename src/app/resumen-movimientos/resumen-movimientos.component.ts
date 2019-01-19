@@ -10,7 +10,9 @@ import { Movimiento } from '../_models/movimiento';
 })
 export class ResumenMovimientosComponent implements OnInit {
 
+  @Input()
   tipos: Tipo[] = [];
+  
   movimientos: Movimiento[] = [];
 
   constructor(   private fireStoreService: FirestoreService) { }

@@ -1,10 +1,6 @@
 <div class="container-fluid">
   <div class="my-3 d-flex justify-content-between align-content-center">   
     <app-filtro-movimientos (movimientos)="getMovimientosFiltrados($event)"></app-filtro-movimientos>
-    <div class="mt-1">
-      <h4 >Total del mes actual: {{getBalanceMesActual() | currency}}</h4>  
-    </div>    
-    
   </div>
   <div class="card">  
       <table class="table table-hover">

@@ -1,10 +1,13 @@
 <div class=" d-flex">
   <div class="flex-fill my-2 desktop">
-    <app-resumen-movimientos ></app-resumen-movimientos>
+    <app-resumen-movimientos [tipos]="tipos"></app-resumen-movimientos>
   </div>
   <div>
-    <div class="my-2 margen-desktop">
-      <app-agregar-movimiento class="flex-fill"></app-agregar-movimiento>
+    <div class="my-2">
+      <app-balance-movimientos [tipos]="tipos" class="flex-fill"></app-balance-movimientos>
+    </div>      
+    <div class="my-2">
+      <app-agregar-movimiento [tipos]="tipos" class="flex-fill"></app-agregar-movimiento>
     </div>
     <div class="my-2">
       <app-ultimos-movimientos class="flex-fill"></app-ultimos-movimientos>     

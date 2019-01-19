@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tipo } from '../_models/tipo';
 import { FirestoreService } from '../_services/firestore.service';
@@ -17,7 +17,15 @@ export class AgregarMovimientoComponent implements OnInit {
 
   user: User;
 
-  tipos: Tipo[] = [];
+  tipos: Tipo[] = []
+
+  @Input('tipos')
+  set actualizarTipos(value: Tipo[]) {
+    this.tipos = value;
+    if (this.tipos.length > 0){
+      this.f['tipo'].setValue(this.tipos[3].nombre);
+    }      
+  }
 
   // convenience getter for easy access to form fields
   get f() { return this.movimientoForm.controls; }
@@ -36,19 +44,7 @@ export class AgregarMovimientoComponent implements OnInit {
       nombre: ['']
     });
 
-    this.fireStoreService.getTipos().subscribe((movimientosSnap) => {
-      this.tipos = [];
-      movimientosSnap.forEach((data: any) => {
-        const tipo = new Tipo()
-        tipo.nombre = data.nombre;
-        tipo.resta = data.resta;
-        tipo.orden = data.orden;
-        this.tipos.push(tipo);
-      })
-      if (this.tipos.length > 0){
-        this.f['tipo'].setValue(this.tipos[3].nombre);
-      }      
-    });    
+    
 
     this.user = new User(JSON.parse(localStorage.getItem('currentUser')));
     

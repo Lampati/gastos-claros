@@ -20,6 +20,7 @@ import { UltimosMovimientosComponent } from './ultimos-movimientos/ultimos-movim
 import { AgregarMovimientoComponent } from './agregar-movimiento/agregar-movimiento.component';
 import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movimientos.component';
 import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimientos.component';
+import { BalanceMovimientosComponent } from './balance-movimientos/balance-movimientos.component';
 
 
 
@@ -33,7 +34,8 @@ import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimien
     UltimosMovimientosComponent,
     AgregarMovimientoComponent,
     ResumenMovimientosComponent,
-    FiltroMovimientosComponent
+    FiltroMovimientosComponent,
+    BalanceMovimientosComponent
   ],
   imports: [ 
     BrowserModule,
