@@ -21,7 +21,11 @@ import { AgregarMovimientoComponent } from './agregar-movimiento/agregar-movimie
 import { ResumenMovimientosComponent } from './resumen-movimientos/resumen-movimientos.component';
 import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimientos.component';
 import { BalanceMovimientosComponent } from './balance-movimientos/balance-movimientos.component';
+import localeFr from '@angular/common/locales/es-AR';
+import { registerLocaleData } from '@angular/common';
 
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr, 'es-AR');
 
 
 @NgModule({

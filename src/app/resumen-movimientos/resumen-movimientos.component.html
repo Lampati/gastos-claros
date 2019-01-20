@@ -25,35 +25,35 @@
           <tbody>
             <tr class="align-items-left thead-light" *ngFor="let item of tipos"  [ngClass]="{ 'table-success': !item.resta}" >
               <th scope="row">{{item.nombre}} </th>
-              <td>${{getTotalMesTipo(1,item)}}</td>        
-              <td>${{getTotalMesTipo(2,item)}}</td>        
-              <td>${{getTotalMesTipo(3,item)}}</td>        
-              <td>${{getTotalMesTipo(4,item)}}</td>        
-              <td>${{getTotalMesTipo(5,item)}}</td>        
-              <td>${{getTotalMesTipo(6,item)}}</td>        
-              <td>${{getTotalMesTipo(7,item)}}</td>        
-              <td>${{getTotalMesTipo(8,item)}}</td>        
-              <td>${{getTotalMesTipo(9,item)}}</td>        
-              <td>${{getTotalMesTipo(10,item)}}</td>        
-              <td>${{getTotalMesTipo(11,item)}}</td>        
-              <td>${{getTotalMesTipo(12,item)}}</td> 
-              <td class="font-weight-bold">${{getTotalTipo(item)}}</td>        
+              <td>${{getTotalMesTipo(1,item) | number:'1.0-0':'es-AR'}} </td>        
+              <td>${{getTotalMesTipo(2,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(3,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(4,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(5,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(6,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(7,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(8,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(9,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(10,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(11,item) | number:'1.0-0':'es-AR'}}</td>        
+              <td>${{getTotalMesTipo(12,item) | number:'1.0-0':'es-AR'}}</td> 
+              <td class="font-weight-bold">${{getTotalTipo(item) | number:'1.0-0':'es-AR'}}</td>        
             </tr>
             <tr class="align-items-left table-info thead-light" >
               <th scope="row">Total</th>
-                <td class="font-weight-bold">${{getTotalMes(1)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(2)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(3)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(4)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(5)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(6)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(7)}}</td>         
-                <td class="font-weight-bold">${{getTotalMes(8)}}</td>        
-                <td class="font-weight-bold">${{getTotalMes(9)}}</td>     
-                <td class="font-weight-bold">${{getTotalMes(10)}}</td>      
-                <td class="font-weight-bold">${{getTotalMes(11)}}</td>  
-                <td class="font-weight-bold">${{getTotalMes(12)}}</td>        
-                <td class="font-weight-bold" scope="row">${{getTotal()}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(1) < 0, 'text-success': getTotalMes(1) > 0 }">${{getTotalMes(1) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(2) < 0, 'text-success': getTotalMes(2) > 0 }">${{getTotalMes(2) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(3) < 0, 'text-success': getTotalMes(3) > 0 }">${{getTotalMes(3) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(4) < 0, 'text-success': getTotalMes(4) > 0 }">${{getTotalMes(4) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(5) < 0, 'text-success': getTotalMes(5) > 0 }">${{getTotalMes(5) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(6) < 0, 'text-success': getTotalMes(6) > 0 }">${{getTotalMes(6) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(7) < 0, 'text-success': getTotalMes(7) > 0 }">${{getTotalMes(7) | number:'1.0-0':'es-AR'}}</td>         
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(8) < 0, 'text-success': getTotalMes(8) > 0 }">${{getTotalMes(8) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(9) < 0, 'text-success': getTotalMes(9) > 0 }">${{getTotalMes(9) | number:'1.0-0':'es-AR'}}</td>     
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(10) < 0, 'text-success': getTotalMes(10) > 0 }">${{getTotalMes(10) | number:'1.0-0':'es-AR'}}</td>      
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(11) < 0, 'text-success': getTotalMes(11) > 0 }">${{getTotalMes(11) | number:'1.0-0':'es-AR'}}</td>  
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(12) < 0, 'text-success': getTotalMes(12) > 0 }">${{getTotalMes(12) | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotal() < 0, 'text-success': getTotalMes() > 0 }" scope="row">${{getTotal() | number:'1.0-0':'es-AR'}}</td>        
               </tr>
           </tbody>
         </table>         
