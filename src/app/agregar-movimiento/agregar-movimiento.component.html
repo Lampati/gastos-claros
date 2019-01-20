@@ -8,7 +8,8 @@
         <form class="d-flex flex-column justify-content-center" [formGroup]="movimientoForm" (ngSubmit)="onSubmit()">  
           <div class="form-group row">
             <div class="col-sm-8">
-              <input type="date" formControlName="fecha"  id="inputFecha" class="my-1 form-control" placeholder="Fecha" required >
+              <input type="date" formControlName="fecha"  id="inputFecha" class="my-1 form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }" placeholder="Fecha" required >
             </div>
             <div class="col-sm-4">
                 <select formControlName="usuario" class="my-1 form-control" required >
@@ -24,17 +25,16 @@
                   </select> 
               </div>
               <div class="col-sm-4">
-                  <input type="text" formControlName="nombre" id="inputNombre" class="my-1 form-control" placeholder="Nombre" > 
-              </div>
+                <input type="number" formControlName="monto" id="inputMonto" class="my-1 form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.monto.errors }" placeholder="Monto" required>       
+                <div *ngIf="submitted && f.monto.errors" class="invalid-feedback">
+                  <div *ngIf="f.monto.errors.required">El monto es requerido</div>
+              </div>           
+             </div>
               <div class="col-sm-4">
-                  <input type="number" formControlName="monto" id="inputMonto" class="my-1 form-control" 
-                  [ngClass]="{ 'is-invalid': submitted && f.monto.errors }" placeholder="Monto" required>       
-                  <div *ngIf="submitted && f.monto.errors" class="invalid-feedback">
-                    <div *ngIf="f.monto.errors.required">El monto es requerido</div>
-                </div>           
-              </div>
-            </div>
-         
+                  <input type="text" formControlName="nombre" id="inputNombre" class="my-1 form-control" placeholder="Nombre (Opcional)" > 
+              </div>             
+            </div>         
           <button *ngIf="!loading" class="my-3 btn btn-lg btn-primary btn-block" type="submit">Agregar</button>
           <img class="loading" *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         </form>

@@ -38,7 +38,7 @@ export class AgregarMovimientoComponent implements OnInit {
 
   ngOnInit() {
     this.movimientoForm = this.formBuilder.group({
-      fecha: [new Date().toISOString().substring(0,10), Validators.required],
+      fecha: [this.getFechaActualDatepicker(), Validators.required],
       usuario: ['', Validators.required],
       tipo: ['', Validators.required],
       monto: ['', Validators.required],
@@ -52,6 +52,14 @@ export class AgregarMovimientoComponent implements OnInit {
     this.f['usuario'].setValue(this.user.nombreCorto);
   }
 
+  getFechaActualDatepicker(): string {
+    return new Date().getFullYear() 
+        + '-'
+        + new Date().getMonth() + 1 
+        + '-'
+        + new Date().getDate()         
+  }
+
   onSubmit() {
     // stop here if form is invalid
     this.submitted = true;
@@ -62,6 +70,8 @@ export class AgregarMovimientoComponent implements OnInit {
 
     this.loading = true;
     var fechaMov = new Date(this.f.fecha.value + ' ' + new Date().toTimeString());
+
+    var fechaMov = new Date(this.f.fecha.value + ' ' + new Date().getHours() + ':' + new Date().getMinutes() + ':00-0300');
 
     var mov = {
       anio: fechaMov.getFullYear(),
