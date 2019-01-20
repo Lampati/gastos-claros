@@ -14,6 +14,7 @@ export class AgregarMovimientoComponent implements OnInit {
 
   movimientoForm: FormGroup;
   loading = false;
+  submitted = false;
 
   user: User;
 
@@ -53,6 +54,8 @@ export class AgregarMovimientoComponent implements OnInit {
 
   onSubmit() {
     // stop here if form is invalid
+    this.submitted = true;
+
     if (this.movimientoForm.invalid) {
         return;
     }
@@ -71,7 +74,11 @@ export class AgregarMovimientoComponent implements OnInit {
     }
 
     const user = this.fireStoreService.crearMovimiento(mov)     
-        .then(() => this.loading = false )
+        .then(() => {
+          this.loading = false 
+          this.f['monto'].setValue('');
+          this.submitted = false;
+        })
         .catch( () => this.loading = false)
   }
   
