@@ -64,7 +64,11 @@ export class ResumenMovimientosComponent implements OnInit {
     var total = 0;
 
     this.movimientos.filter (x => x.mes == mes ).forEach(element => {
-      total += element.monto;
+      if (this.tipos.find(x => x.nombre == element.tipo).resta){
+        total -= element.monto;
+      }else{
+        total += element.monto;
+      }
     });
 
     return total;
@@ -84,7 +88,11 @@ export class ResumenMovimientosComponent implements OnInit {
     var total = 0;
 
     this.movimientos.forEach(element => {
-      total += element.monto;
+      if (this.tipos.find(x => x.nombre == element.tipo).resta){
+        total -= element.monto;
+      }else{
+        total += element.monto;
+      }
     });
 
     return total;

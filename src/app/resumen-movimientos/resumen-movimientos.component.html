@@ -3,8 +3,8 @@
     <app-filtro-movimientos (movimientos)="getMovimientosFiltrados($event)"></app-filtro-movimientos>
   </div>
   <div class="card">  
-      <table class="table table-hover">
-          <thead class="align-items-center thead-light ">
+      <table class="table table-hover table-bordered">
+          <thead class="align-items-left thead-light ">
             <tr>
               <th scope="col"></th>
               <th scope="col">Ene</th>
@@ -23,7 +23,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="align-items-center thead-light" *ngFor="let item of tipos ">
+            <tr class="align-items-left thead-light" *ngFor="let item of tipos"  [ngClass]="{ 'table-success': !item.resta}" >
               <th scope="row">{{item.nombre}} </th>
               <td>${{getTotalMesTipo(1,item)}}</td>        
               <td>${{getTotalMesTipo(2,item)}}</td>        
@@ -37,23 +37,23 @@
               <td>${{getTotalMesTipo(10,item)}}</td>        
               <td>${{getTotalMesTipo(11,item)}}</td>        
               <td>${{getTotalMesTipo(12,item)}}</td> 
-              <th scope="row">${{getTotalTipo(item)}}</th>        
+              <td class="font-weight-bold">${{getTotalTipo(item)}}</td>        
             </tr>
-            <tr class="align-items-center table-primary thead-light" >
+            <tr class="align-items-left table-info thead-light" >
               <th scope="row">Total</th>
-                <th>${{getTotalMes(1)}}</th>        
-                <th>${{getTotalMes(2)}}</th>        
-                <th>${{getTotalMes(3)}}</th>        
-                <th>${{getTotalMes(4)}}</th>        
-                <th>${{getTotalMes(5)}}</th>        
-                <th>${{getTotalMes(6)}}</th>        
-                <th>${{getTotalMes(7)}}</th>         
-                <th>${{getTotalMes(8)}}</th>        
-                <th>${{getTotalMes(9)}}</th>     
-                <th>${{getTotalMes(10)}}</th>      
-                <th>${{getTotalMes(11)}}</th>  
-                <th>${{getTotalMes(12)}}</th>        
-                <th scope="row">${{getTotal()}}</th>        
+                <td class="font-weight-bold">${{getTotalMes(1)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(2)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(3)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(4)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(5)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(6)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(7)}}</td>         
+                <td class="font-weight-bold">${{getTotalMes(8)}}</td>        
+                <td class="font-weight-bold">${{getTotalMes(9)}}</td>     
+                <td class="font-weight-bold">${{getTotalMes(10)}}</td>      
+                <td class="font-weight-bold">${{getTotalMes(11)}}</td>  
+                <td class="font-weight-bold">${{getTotalMes(12)}}</td>        
+                <td class="font-weight-bold" scope="row">${{getTotal()}}</td>        
               </tr>
           </tbody>
         </table>         
