@@ -53,7 +53,7 @@
                 <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(10) < 0, 'text-success': getTotalMes(10) > 0 }">${{getTotalMes(10) | number:'1.0-0':'es-AR'}}</td>      
                 <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(11) < 0, 'text-success': getTotalMes(11) > 0 }">${{getTotalMes(11) | number:'1.0-0':'es-AR'}}</td>  
                 <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotalMes(12) < 0, 'text-success': getTotalMes(12) > 0 }">${{getTotalMes(12) | number:'1.0-0':'es-AR'}}</td>        
-                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotal() < 0, 'text-success': getTotalMes() > 0 }" scope="row">${{getTotal() | number:'1.0-0':'es-AR'}}</td>        
+                <td class="font-weight-bold" [ngClass]="{ 'text-danger': getTotal() < 0, 'text-success': getTotal() > 0 }" scope="row">${{getTotal() | number:'1.0-0':'es-AR'}}</td>        
               </tr>
           </tbody>
         </table>         
