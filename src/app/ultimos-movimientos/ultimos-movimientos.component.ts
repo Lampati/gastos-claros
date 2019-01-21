@@ -17,6 +17,9 @@ export class UltimosMovimientosComponent implements OnInit {
   cantidad: number;
 
   @Input()
+  mostrarNombre: boolean = true;
+
+  @Input()
   titulo: string = "Ultimos movimientos";
 
   ultimosMovimientos: Movimiento[] = [];

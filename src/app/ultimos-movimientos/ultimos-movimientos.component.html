@@ -10,6 +10,7 @@
               <th scope="col">Fecha</th>
               <th scope="col">Usuario</th>
               <th scope="col">Tipo</th>
+              <th class="desktop" *ngIf="mostrarNombre" scope="col">Nombre</th>
               <th scope="col">Monto</th>
               <th scope="col"></th>
             </tr>
@@ -19,7 +20,8 @@
               <td>{{item.fecha | date: 'dd/MM'}} </td>
               <td> {{item.usuario}}</td>        
               <td>{{item.tipo}}</td>
-              <td>${{item.monto}}</td>
+              <td class="desktop" *ngIf="mostrarNombre">{{item.nombre}}</td>
+              <td>${{item.monto | number:'1.0-0':'es-AR'}}</td>
               <td><button class="btn-transparente pointer" (click)="onEliminarClick($event, item)"><i  class="material-icons">clear</i></button></td>
             </tr>
           </tbody>
