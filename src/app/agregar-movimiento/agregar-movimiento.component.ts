@@ -69,8 +69,6 @@ export class AgregarMovimientoComponent implements OnInit {
     }
 
     this.loading = true;
-    var fechaMov = new Date(this.f.fecha.value + ' ' + new Date().toTimeString());
-
     var fechaMov = new Date(this.f.fecha.value + ' ' + new Date().getHours() + ':' + new Date().getMinutes() + ':00-0300');
 
     var mov = {

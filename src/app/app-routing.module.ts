@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { MovimientosComponent } from './movimientos/movimientos.component';
 import { HomeComponent } from './home/home.component';
+import { BancosComponent } from './bancos/bancos.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'movimientos', component: MovimientosComponent}      
+      {path: 'movimientos', component: MovimientosComponent},      
+      {path: 'bancos', component: BancosComponent}      
     ]  },
   { path: '', redirectTo: 'home',   pathMatch: 'full' }
  

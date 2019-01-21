@@ -23,6 +23,9 @@ import { FiltroMovimientosComponent } from './filtro-movimientos/filtro-movimien
 import { BalanceMovimientosComponent } from './balance-movimientos/balance-movimientos.component';
 import localeFr from '@angular/common/locales/es-AR';
 import { registerLocaleData } from '@angular/common';
+import { AgregarBancoComponent } from './bancos/agregar-banco/agregar-banco.component';
+import { BancosComponent } from './bancos/bancos.component';
+import { ResumenBancosComponent } from './bancos/resumen-bancos/resumen-bancos.component';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'es-AR');
@@ -39,7 +42,10 @@ registerLocaleData(localeFr, 'es-AR');
     AgregarMovimientoComponent,
     ResumenMovimientosComponent,
     FiltroMovimientosComponent,
-    BalanceMovimientosComponent
+    BalanceMovimientosComponent,
+    AgregarBancoComponent,
+    BancosComponent,
+    ResumenBancosComponent
   ],
   imports: [ 
     BrowserModule,

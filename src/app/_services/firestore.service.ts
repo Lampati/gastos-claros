@@ -74,4 +74,17 @@ export class FirestoreService {
   public getTipos() {
     return this.firestore.collection('tipos', ref => ref.orderBy('orden')).valueChanges();
   }
+
+  public crearBanco(data: any) {
+    return this.firestore.collection('bancos').add(data);
+  }
+
+  public deleteBanco(documentId: string) {
+    return this.firestore.collection('bancos').doc(documentId).delete();
+  }
+
+  public getBancos() {
+    return this.firestore.collection('bancos',ref => ref.orderBy('anio','desc').orderBy('mes','desc')).snapshotChanges();
+  }
+
 }

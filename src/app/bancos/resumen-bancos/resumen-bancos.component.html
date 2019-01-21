@@ -1,0 +1,42 @@
+<div class="container-fluid">   
+    <div class="card">  
+        <table class="table table-hover table-bordered">
+            <thead class="align-items-left thead-light ">
+              <tr>
+                <th scope="col">Año</th>
+                <th scope="col">Mes</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Banco</th>
+                <th scope="col">C.A.</th>
+                <th scope="col">C.C.</th>
+                <th scope="col">P.F.</th>
+                <th scope="col">Bonos</th>
+                <th scope="col">C.A. USD</th>
+                <th scope="col">P.F. USD</th>
+                <th scope="col">Bonos USD</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-items-left thead-light" *ngFor="let item of bancos"   >
+                <td>{{item.anio}}</td>
+                <td>{{item.mes}}</td>
+                <td>{{item.usuario}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.cajaAhorro}}</td>
+                <td>{{item.cuentaCorriente}}</td>
+                <td>{{item.plazoFijo}}</td>
+                <td>{{item.bonos}}</td>
+                <td>{{item.cajaAhorroDolares}}</td>
+                <td>{{item.plazoFijoDolares}}</td>
+                <td>{{item.bonosDolares}}</td>
+                <td><button class="btn-transparente pointer" (click)="onEliminarClick($event, item)"><i  class="material-icons">clear</i></button></td>
+              </tr>
+            </tbody>
+          </table>         
+      <!-- <app-tabla-anio-movimientos [movimientos]="movimientos" [tipos]="tipos"></app-tabla-anio-movimientos> -->
+    </div>
+  
+  </div>
+            
+        
