@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FirestoreService } from '../_services/firestore.service';
 import { Movimiento } from '../_models/movimiento';
 
@@ -13,11 +13,17 @@ export class UltimosMovimientosComponent implements OnInit {
     private fireStoreService: FirestoreService
   ) { }
 
+  @Input()
+  cantidad: number;
+
+  @Input()
+  titulo: string = "Ultimos movimientos";
+
   ultimosMovimientos: Movimiento[] = [];
 
   ngOnInit() {
 
-    this.fireStoreService.getUltimosMovimientos(10).subscribe((movimientosSnap) => {
+    this.fireStoreService.getUltimosMovimientos(this.cantidad).subscribe((movimientosSnap) => {
         this.ultimosMovimientos = [];      
         
         movimientosSnap.forEach((snap: any) => {

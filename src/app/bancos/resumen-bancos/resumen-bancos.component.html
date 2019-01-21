@@ -23,18 +23,17 @@
                 <td>{{item.mes}}</td>
                 <td>{{item.usuario}}</td>
                 <td>{{item.nombre}}</td>
-                <td>{{item.cajaAhorro}}</td>
-                <td>{{item.cuentaCorriente}}</td>
-                <td>{{item.plazoFijo}}</td>
-                <td>{{item.bonos}}</td>
-                <td>{{item.cajaAhorroDolares}}</td>
-                <td>{{item.plazoFijoDolares}}</td>
-                <td>{{item.bonosDolares}}</td>
+                <td>${{item.cajaAhorro | number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.cuentaCorriente | number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.plazoFijo| number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.bonos | number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.cajaAhorroDolares | number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.plazoFijoDolares | number:'1.0-0':'es-AR'}}</td>
+                <td>${{item.bonosDolares | number:'1.0-0':'es-AR'}}</td>
                 <td><button class="btn-transparente pointer" (click)="onEliminarClick($event, item)"><i  class="material-icons">clear</i></button></td>
               </tr>
             </tbody>
           </table>         
-      <!-- <app-tabla-anio-movimientos [movimientos]="movimientos" [tipos]="tipos"></app-tabla-anio-movimientos> -->
     </div>
   
   </div>

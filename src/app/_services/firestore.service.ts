@@ -22,7 +22,11 @@ export class FirestoreService {
 
 
   public getUltimosMovimientos(cantidad: number) {
-    return this.firestore.collection('movimientos',ref => ref.orderBy('fecha','desc').limit(cantidad)).snapshotChanges();
+    if (cantidad){
+      return this.firestore.collection('movimientos',ref => ref.orderBy('fecha','desc').limit(cantidad)).snapshotChanges();
+    }else{
+      return this.firestore.collection('movimientos',ref => ref.orderBy('fecha','desc')).snapshotChanges();
+    }
   }
 
   public getMovimientosDelAnio(anio: number) {

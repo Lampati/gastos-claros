@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit {
   }
 
   logout(){
-    this.authenticationService.signOut();
+    if(confirm("¿Esta seguro que desea desloguearse?")) {
+      this.authenticationService.signOut();
+    }
   }
 
 }
