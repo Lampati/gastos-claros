@@ -22,17 +22,31 @@ export class BalanceMovimientosComponent implements OnInit {
 
 
   ngOnInit() {
-    this.fireStoreService.getMovimientosDelMesAnio(this.anio, this.mes).subscribe((elementos) => {
+    this.fireStoreService.getMovimientosAnio(this.anio).subscribe((elementos) => {
       this.movimientos = elementos;
       this.calcularBalanceMesActual();
-    
+      this.calcularBalanceAnioActual();
     });
+  }
+
+  calcularBalanceAnioActual(): number {
+    var total = 0;
+    
+    this.movimientos.forEach(element => {
+      if (this.tipos.find(x => x.nombre == element.tipo).resta){
+        total -= element.monto;
+      }else{
+        total += element.monto;
+      }
+    });
+
+    return total;
   }
   
   calcularBalanceMesActual(): number {
     var total = 0;
     
-    this.movimientos.forEach(element => {
+    this.movimientos.filter(x => x.mes == this.mes).forEach(element => {
       if (this.tipos.find(x => x.nombre == element.tipo).resta){
         total -= element.monto;
       }else{

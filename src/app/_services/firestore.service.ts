@@ -52,6 +52,29 @@ export class FirestoreService {
     );
   }
 
+  public getMovimientosAnio(anio: number) {
+    return this.firestore.collection('movimientos', ref => ref.where('anio','==',anio)).valueChanges().
+      pipe(
+        map(response => {
+          const elementos:  Movimiento[] = [];
+          response.forEach((data: any) => {
+            const mov = new Movimiento()
+            mov.anio = data.anio;
+            mov.mes = data.mes;            
+            mov.fecha = data.fecha.toDate() ;
+            mov.usuario = data.usuario;
+            mov.tipo = data.tipo;
+            mov.nombre = data.nombre;
+            mov.monto = data.monto;
+    
+            elementos.push(mov);
+          }          
+        ) 
+        return elementos;
+        })
+    );
+  }
+
   public getMovimientosDelMesAnio(anio: number, mes: number) {
     return this.firestore.collection('movimientos', ref => ref.where('anio','==',anio).where('mes','==',mes)).valueChanges().
       pipe(

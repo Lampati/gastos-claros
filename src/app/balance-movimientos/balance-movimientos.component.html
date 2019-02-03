@@ -1,12 +1,21 @@
 <div class="container-fluid">
   <div class="card">
     <h5 class="card-header">
-        Balance del mes actual
+        Balance actual
     </h5>
-    <div class="card-body d-flex justify-content-center">
-      <h3 [ngClass]="{ 'text-danger': calcularBalanceMesActual() < 0, 'text-success': calcularBalanceMesActual() > 0 }" >
-        ${{calcularBalanceMesActual() | number:'1.0-0':'es-AR'}} 
-      </h3>
+    <div class="card-body d-flex justify-content-around">
+      <div>
+        <h3 class="total" [ngClass]="{ 'text-danger': calcularBalanceAnioActual() < 0, 'text-success': calcularBalanceAnioActual() > 0 }" >
+          ${{calcularBalanceAnioActual() | number:'1.0-0':'es-AR'}} 
+        </h3>
+        <div class="titulo">Año</div>
+      </div>
+      <div>
+        <h3 class="total" [ngClass]="{ 'text-danger': calcularBalanceMesActual() < 0, 'text-success': calcularBalanceMesActual() > 0 }" >
+          ${{calcularBalanceMesActual() | number:'1.0-0':'es-AR'}} 
+        </h3>
+        <div class="titulo">Mes</div>
+        </div>
     </div>
   </div>
 </div>
